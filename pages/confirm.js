@@ -12,8 +12,8 @@ const Confirm = () => {
 
   console.log(pickup, dropoff);
 
-  const [pickupCoordinates, setPickupCoordinates] = useState();
-  const [dropoffCoordinates, setDropoffCoordinates] = useState();
+  const [pickupCoordinates, setPickupCoordinates] = useState([0, 0]);
+  const [dropoffCoordinates, setDropoffCoordinates] = useState([0, 0]);
 
   const getPickupCoordinates = (pickup) => {
     // const pickup = "Santa Monica";
@@ -58,13 +58,22 @@ const Confirm = () => {
 
   return (
     <Wrapper>
+      <ButtonContainer>
+        <Link href="/search">
+          <BackButton src="https://img.icons8.com/ios-filled/50/000000/left.png" />
+        </Link>
+      </ButtonContainer>
+
       <Map
         pickupCoordinates={pickupCoordinates}
         dropoffCoordinates={dropoffCoordinates}
       />
 
       <RideContainer>
-        <RideSelector />
+        <RideSelector
+          pickupCoordinates={pickupCoordinates}
+          dropoffCoordinates={dropoffCoordinates}
+        />
 
         <ConfirmButtonContainer>
           <ConfirmButton>Confirm UberX</ConfirmButton>
@@ -90,4 +99,12 @@ const ConfirmButtonContainer = tw.div`
 
 const ConfirmButton = tw.div`
   bg-black text-white my-4 mx-4 py-4 text-center text-xl rounded-lg cursor-pointer
+`;
+
+const ButtonContainer = tw.div`
+  rounded-full absolute top-4 left-4 z-10 bg-white shadow-md cursor-pointer transform hover:scale-90 transition-all
+`;
+
+const BackButton = tw.img`
+  object-cover h-10 p-1 
 `;
