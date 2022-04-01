@@ -18,3 +18,24 @@ a {
 * {
   box-sizing: border-box;
 }
+
+/* ::-webkit-scrollbar {
+  width: 4px;
+  background-color: white;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: gray;
+  border-radius: 20px;
+} */
+
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background: black;
+  /* border-radius: 20px; */
+  border-right: 4px white solid;
+  background-clip: padding-box;
+}
