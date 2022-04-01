@@ -41,5 +41,5 @@ const Map = (props) => {
 export default Map;
 
 const Wrapper = tw.div`
-  flex flex-col flex-1
+  flex flex-col flex-1 h-1/2
 `;
